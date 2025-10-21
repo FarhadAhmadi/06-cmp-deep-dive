@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { ControlComponent } from "../../../shared/control/control.component";
+import { FormsModule, NgForm } from '@angular/forms';
+import { ControlComponent } from '../../../shared/control/control.component';
 
 @Component({
   selector: 'app-new-tickets',
@@ -10,5 +10,11 @@ import { ControlComponent } from "../../../shared/control/control.component";
   styleUrl: './new-ticket.component.css',
 })
 export class NewTicketsComponent {
-  onSubmit() {}
+  title!: string;
+  request!: string;
+
+  onSubmit(form: NgForm) {
+    console.log(form);
+    form.reset();
+  }
 }
